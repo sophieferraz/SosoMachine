@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soso's Machine</title>
+
+    <style>
+        @font-face {
+            font-family: 'Starborn';
+            src: url('Starborn.ttf') format('truetype'), 
+                 url('Starborn.otf') format('opentype'); 
+            font-weight: normal;
+            font-style: normal;
+        } 
+
+        body {
+            background-image: url('hello-kitty-oncinha.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+        
+            background-color: #f2e3e9; 
+            
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Starborn', sans-serif;
+            font-size: 48px;
+            color: #ff69b4; 
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.7); 
+            display: inline-block;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 50px;
+        }  
+        .botao {
+            background-color: #f1889b;
+            color: black; 
+            border-radius: 18px;
+            cursor: pointer;
+            border: none;
+            padding: 10px 15px 10px 15px;
+            text-align: center;
+            font-size: 17px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .caixinha {
+            background-color: #f2e3e9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Soso's Machine</h1>
+
+        <h3 class="texto">Digite um número decimal:</h3>
+        <input id="num1" type="text" placeholder="Ex: 56">
+        <br><br>
+
+        <button class ="botao"onclick="converter()">Converter</button>
+
+        <h3 class="texto">Resultados:</h3>
+
+        <p class="texto">Octal:</p>
+        <div class="caixinha" id="num2"></div>
+        
+        <p class="texto">Hexadecimal:</p>
+        <div class="caixinha" id="num3"></div>
+        
+        <p class="texto">Binário:</p>
+        <div class="caixinha" id ="num4"></div>
+    </div>
+
+    <script>
+        function converter() {
+            var decimal = Number(document.getElementById('num1').value);
+
+            document.getElementById('num2').innerHTML = decimal.toString(8);
+            document.getElementById('num3').innerHTML = decimal.toString(16).toUpperCase();
+            document.getElementById('num4').innerHTML = decimal.toString(2);
+        }
+    </script>
+</body>
+</html>
